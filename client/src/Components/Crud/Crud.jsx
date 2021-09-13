@@ -4,7 +4,7 @@ function Crud() {
 
   return (
     <div className="App">
-            <h1>Crud App</h1>
+            <h1>CRUD</h1>
 
         <div>Crud app</div>
     </div>

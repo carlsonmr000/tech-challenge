@@ -1,0 +1,21 @@
+.counter-wrapper {
+    display: flex;
+  }
+  
+  .count {
+    margin: 5px;
+    width: 5vw;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-weight: bolder;
+  }
+  
+  .count-button {
+    padding: 5px 50px;
+    border-radius: 6px;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    background-color: #5893f1;
+    color: white;
+    font-weight: bold;
+  }

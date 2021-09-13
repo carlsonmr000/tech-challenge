@@ -32,6 +32,7 @@ function TemperatureConverter() {
 
   return (
     <div className="App">
+      <h1>Temperature Converter Auto</h1>
       <form>
         <div>
         <input className="c-input" type="text" value={celsius} onChange={(e) => {

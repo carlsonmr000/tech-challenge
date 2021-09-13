@@ -4,6 +4,7 @@ function Timer() {
 
   return (
     <div className="App">
+      <h1>Timer</h1>
         <div>Timer app</div>
     </div>
   );
