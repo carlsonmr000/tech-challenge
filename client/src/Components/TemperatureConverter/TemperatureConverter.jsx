@@ -2,81 +2,83 @@ import { useEffect, useState } from "react";
 import "./TemperatureConverter.css";
 
 function TemperatureConverter() {
-  const [celsius, setCelsius] = useState(1);
-  const [fahrenheit, setFahrenheit] = useState(1);
+  const [celsius, setCelsius] = useState(" ");
+  const [fahrenheit, setFahrenheit] = useState(" ");
   const [beingChanged, setBeingChange] = useState("fahrenheit");
 
+  
+
+  // const clearInput = () => (celsius.current.value = " ");
 
   useEffect(() => {
-    updateTemp();
-  }, [celsius, fahrenheit]);
+    // clearInput();
+    const updateTemp = (e) => {
 
-  const updateTemp = (e) => {
-    if (beingChanged === "fahrenheit") {
-      setCelsius(parseInt((fahrenheit - 32) * (5 / 9)), 2);
-    } else {
-      setFahrenheit(parseInt((9 / 5) * celsius + 32), 2);
-    }
-  };
+      if (beingChanged === "fahrenheit") {
+        setCelsius(parseInt((fahrenheit - 32) * (5 / 9)), 2);
+      } else {
+        setFahrenheit(parseInt((9 / 5) * celsius + 32), 2);
+      }
+    };
+
+    updateTemp();
+  }, [beingChanged, fahrenheit, celsius]);
 
   return (
     <div className="temp-wrapper">
       <h1>Temperature Converter Auto</h1>
       <form>
-
-        {
-         fahrenheit && celsius ? (
-
-            <div>
+        {fahrenheit && celsius ? (
+          <div>
             <input
               className="number"
-              type="text"
+              type="number"
               value={celsius}
-              onChange={(e) => {
+              // onReset={clearInput}
+              onInput={(e) => {
                 setBeingChange("celsius");
                 setCelsius(e.target.value);
               }}
             />
             <label>Celsius=</label>
-  
+
             <input
               className="number"
-              type="text"
+              type="number"
               value={fahrenheit}
-              onChange={(e) => {
+              // onReset={clearInput}
+              onInput={(e) => {
                 setBeingChange("fahrenheit");
                 setFahrenheit(e.target.value);
               }}
             />
             <label>Fahrenheit</label>
           </div>
-          ) : (
-            <div>
+        ) : (
+          <div>
             <input
               className="not-number"
-              className="not-number"
-              type="text"
+              type="number"
               value={celsius}
-              onChange={(e) => {
-                setBeingChange("celsius");
-                setCelsius(e.target.value);
+              onInput={(e) => {
+                setBeingChange(" ");
+                setCelsius(" ");
               }}
             />
             <label>Celsius=</label>
-  
+
             <input
-              type="text"
+              className="not-number"
+              type="number"
               value={fahrenheit}
-              onChange={(e) => {
-                setBeingChange("fahrenheit");
-                setFahrenheit(e.target.value);
+              onInput={(e) => {
+                setBeingChange(" ");
+                setFahrenheit(" ");
               }}
             />
             <label>Fahrenheit</label>
           </div>
-          )}
-
-  
+        )}
       </form>
     </div>
   );
