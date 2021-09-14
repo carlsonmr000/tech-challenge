@@ -1,23 +1,7 @@
-.true {    
+.number {
     background-color: white;
 }
 
-.false {
-    background-color: red;
-}
-
-#empty {
-    background-color: lightgrey;
-}
-
-#not-empty {
-    background-color: black;
-}
-
-/* .yes {
+.not-number {
     background-color: #fb7b54;
-}
-
-.no {
-    background-color: white;
-}  */
+} 
