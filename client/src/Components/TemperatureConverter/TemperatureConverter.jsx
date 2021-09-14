@@ -1,50 +1,36 @@
 import { useEffect, useState } from "react";
-import "./TemperatureConverter.css"
+import "./TemperatureConverter.css";
 
 function TemperatureConverter() {
   const [celsius, setCelsius] = useState(0);
   const [fahrenheit, setFahrenheit] = useState(0);
   const [beingChanged, setBeingChange] = useState("fahrenheit");
 
- 
   useEffect(() => {
     console.log(beingChanged);
     updateTemp();
   }, [celsius, fahrenheit]);
 
-
-
   const updateTemp = (e) => {
     const validNumber = !isNaN(+celsius);
-    console.log("is number valid?",validNumber)
-
+    console.log("is number valid?", validNumber);
 
     // if(celsius.length === 0) {
     //   setDisable(!disable)
     // }
 
     if (beingChanged === "fahrenheit") {
-      console.log("this is fahrenheit", fahrenheit)
-      setCelsius(
-        parseInt((fahrenheit - 32) * (5 / 9)), 2
-        
-        );
-    } 
+      console.log("this is fahrenheit", fahrenheit);
+      setCelsius(parseInt((fahrenheit - 32) * (5 / 9)), 2);
+    } else {
+      setFahrenheit(parseInt((9 / 5) * celsius + 32), 2);
 
-    if(beingChanged === "celsius") {
-      setFahrenheit(
-        
-        parseInt((9 / 5 * celsius) + 32), 2
-        
-        
-      )
-      console.log("this is celsius", celsius)
-      }
+    }
 
-
+    // if (beingChanged === "celsius") {
+    //   console.log("this is celsius", celsius);
+    // }
   };
-
-
 
   return (
     <div className="temp-wrapper">
