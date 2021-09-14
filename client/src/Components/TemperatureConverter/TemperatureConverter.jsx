@@ -9,9 +9,10 @@ function TemperatureConverter() {
 
 
   useEffect(() => {
-    // console.log(beingChanged);
+    console.log(beingChanged);
     updateTemp();
   }, [celsius, fahrenheit]);
+
 
 
   const updateTemp = (e) => {
@@ -31,13 +32,12 @@ function TemperatureConverter() {
 
     if(beingChanged === "celsius") {
       setFahrenheit(
-        parseInt(   (9 / 5 * celsius) + 32.4), 2);
+        parseInt(   (celsius * 1.8) + 32), 2);
       console.log("this is celsius", celsius)
-    
+      }
+
     }
 
-
-  };
 
   return (
     <div className="temp-wrapper">
@@ -47,23 +47,26 @@ function TemperatureConverter() {
           <input
             className="c-input"
             type="text"
-            disabled={disable}
+            // disabled={disable}
             value={celsius}
             onChange={(e) => {
               setBeingChange("celsius");
               setCelsius(e.target.value);
+              // setDisable(!disable)
             }}
           />
-          <label>Celsius = </label>
+          <label>Celsius=</label>
 
           <input
             className="f-input"
             type="text"
-            disabled={disable}
             value={fahrenheit}
+            // disabled={disable}
             onChange={(e) => {
               setBeingChange("fahrenheit");
               setFahrenheit(e.target.value);
+              // setDisable(!disable)
+
             }}
           />
           <label>Fahrenheit</label>
