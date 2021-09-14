@@ -9,38 +9,34 @@ function TemperatureConverter() {
 
 
   useEffect(() => {
-    console.log(beingChanged);
+    // console.log(beingChanged);
     updateTemp();
   }, [celsius, fahrenheit]);
 
 
   const updateTemp = (e) => {
-    const validNumber = !isNaN(celsius);
-    if (!validNumber) {
-         ;
-    }
-
+    const validNumber = !isNaN(+celsius);
+    console.log("is number valid?",validNumber)
  
-    // if(fahrenheit.length === 0) {
-    //   setDisable(!disable)
-    // } else {
-    //   setDisable(disable)
-    // }
+
 
     // if(celsius.length === 0) {
     //   setDisable(!disable)
     // }
 
     if (beingChanged === "fahrenheit") {
-      setCelsius(parseInt((fahrenheit - 32) * (5 / 9)), 2);
-    } else {
-      setFahrenheit(parseInt(celsius * (9 / 5) + 32), 2);
+      console.log("this is fahrenheit", fahrenheit)
+      setCelsius(parseInt((fahrenheit - 32.4) * (5 / 9)), 2);
+    } 
+
+    if(beingChanged === "celsius") {
+      setFahrenheit(
+        parseInt(   (9 / 5 * celsius) + 32.4), 2);
+      console.log("this is celsius", celsius)
+    
     }
 
-    if(fahrenheit.length === 0) {
-      setDisable(!disable)
 
-    }
   };
 
   return (
@@ -66,14 +62,10 @@ function TemperatureConverter() {
             disabled={disable}
             value={fahrenheit}
             onChange={(e) => {
-              console.log("about to set fahrenheit state!!", e.target.value);
               setBeingChange("fahrenheit");
               setFahrenheit(e.target.value);
             }}
           />
-          {/* <button type="button" onClick={handleClick}>
-            toggle
-          </button> */}
           <label>Fahrenheit</label>
         </div>
       </form>
