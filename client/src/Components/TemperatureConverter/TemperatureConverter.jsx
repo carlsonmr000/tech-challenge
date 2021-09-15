@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./TemperatureConverter.css";
 
 function TemperatureConverter() {
+  const handleClick = (e) => {
+    e.target.select();
+  };
+
   const [celsius, setCelsius] = useState(" ");
   const [fahrenheit, setFahrenheit] = useState(" ");
   const [beingChanged, setBeingChange] = useState("fahrenheit");
-
   
-
-  // const clearInput = () => (celsius.current.value = " ");
-
   useEffect(() => {
-    // clearInput();
     const updateTemp = (e) => {
 
       if (beingChanged === "fahrenheit") {
@@ -20,7 +19,6 @@ function TemperatureConverter() {
         setFahrenheit(parseInt((9 / 5) * celsius + 32), 2);
       }
     };
-
     updateTemp();
   }, [beingChanged, fahrenheit, celsius]);
 
@@ -34,11 +32,11 @@ function TemperatureConverter() {
               className="number"
               type="number"
               value={celsius}
-              // onReset={clearInput}
               onInput={(e) => {
                 setBeingChange("celsius");
                 setCelsius(e.target.value);
               }}
+              onClick={handleClick}
             />
             <label>Celsius=</label>
 
@@ -46,11 +44,11 @@ function TemperatureConverter() {
               className="number"
               type="number"
               value={fahrenheit}
-              // onReset={clearInput}
               onInput={(e) => {
                 setBeingChange("fahrenheit");
                 setFahrenheit(e.target.value);
               }}
+              onClick={handleClick}
             />
             <label>Fahrenheit</label>
           </div>
@@ -62,8 +60,9 @@ function TemperatureConverter() {
               value={celsius}
               onInput={(e) => {
                 setBeingChange(" ");
-                setCelsius(" ");
+                setCelsius(null);
               }}
+              onClick={handleClick}
             />
             <label>Celsius=</label>
 
@@ -73,8 +72,10 @@ function TemperatureConverter() {
               value={fahrenheit}
               onInput={(e) => {
                 setBeingChange(" ");
-                setFahrenheit(" ");
+                setFahrenheit(null);
               }}
+              onClick={handleClick}
+
             />
             <label>Fahrenheit</label>
           </div>
