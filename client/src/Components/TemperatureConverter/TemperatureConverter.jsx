@@ -6,9 +6,9 @@ function TemperatureConverter() {
   const [fahrenheit, setFahrenheit] = useState();
   const [beingChanged, setBeingChange] = useState("fahrenheit");
 
-  // const handleClick = (e) => {
-  //   e.target.select();
-  // };
+  const handleClick = (e) => {
+    e.target.select();
+  };
 
   useEffect(() => {
     const updateTemp = (e) => {
@@ -34,7 +34,7 @@ function TemperatureConverter() {
               setBeingChange("celsius");
               setCelsius(e.target.value);
             }}
-            // onClick={handleClick}
+            onClick={handleClick}
           />
           <label>Celsius=</label>
 
@@ -46,7 +46,7 @@ function TemperatureConverter() {
               setBeingChange("fahrenheit");
               setFahrenheit(e.target.value);
             }}
-            // onClick={handleClick}
+            onClick={handleClick}
           />
           <label>Fahrenheit</label>
         </div>
