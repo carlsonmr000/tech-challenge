@@ -5,7 +5,14 @@ function Timer() {
   return (
     <div className="App">
       <h1>Timer</h1>
-        <div>Timer app</div>
+        <form>
+          <div>
+          <input/>
+          <input/>
+          <input/>
+          <button>Reset</button>
+          </div>
+        </form>
     </div>
   );
 }

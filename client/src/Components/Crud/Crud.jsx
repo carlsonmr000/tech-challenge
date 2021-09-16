@@ -1,12 +1,20 @@
-
 function Crud() {
-//   const [count, setCount] = useState(0);
+  //   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-            <h1>CRUD</h1>
-
-        <div>Crud app</div>
+      <h1>CRUD</h1>
+      <form>
+          <div>
+          <input/>
+          <textarea/>
+          <input/>
+          <input/>
+          <button>Create</button>
+          <button>Update</button>
+          <button>Delete</button>
+          </div>
+        </form>
     </div>
   );
 }
