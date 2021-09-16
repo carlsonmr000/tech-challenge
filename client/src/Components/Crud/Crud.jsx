@@ -6,9 +6,12 @@ function Crud() {
       <h1>CRUD</h1>
       <form>
           <div>
+          <label>Filter prefix:</label>
           <input/>
-          <textarea/>
+          <textarea placeholder="Carlson, Maxi"/>
+          <label>Name:</label>
           <input/>
+          <label>Surname:</label>
           <input/>
           <button>Create</button>
           <button>Update</button>

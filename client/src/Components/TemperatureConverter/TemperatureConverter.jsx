@@ -23,7 +23,7 @@ function TemperatureConverter() {
 
   return (
     <div className="temp-wrapper">
-      <h1>Temperature Converter Auto</h1>
+      <h1>Temperature Converter</h1>
       <form>
         <div>
           <input
