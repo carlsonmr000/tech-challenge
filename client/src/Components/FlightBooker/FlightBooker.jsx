@@ -1,10 +1,9 @@
 import { useState } from "react";
+
 function FlightBooker() {
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("one");
   let disabled = false;
   console.log("SELECTED", selectedOption);
-
-
 
   const handleOneBook = (e) => {
     e.preventDefault();
@@ -13,7 +12,7 @@ function FlightBooker() {
 
   const handleReturnBook = (e) => {
     e.preventDefault();
-    alert(`You have booked a one-way and return flights on`);
+    alert(`You have booked one-way and return flights on`);
   };
 
   return (
@@ -29,7 +28,11 @@ function FlightBooker() {
           {selectedOption === "one" && (
             <div>
               <input type="date" placeholder="09/15/2021" />
-              <input type="date" disabled={ selectedOption === 'one' ? true : false } placeholder="09/15/2021"  />
+              <input
+                type="date"
+                disabled={selectedOption === "one" ? true : false}
+                placeholder="09/15/2021"
+              />
               <button onClick={handleOneBook}>Book</button>
             </div>
           )}
@@ -37,10 +40,11 @@ function FlightBooker() {
           {selectedOption === "return" && (
             <div>
               <input type="date" placeholder="09/15/2021" />
-              <input type="date" placeholder="09/15/2021"  />
+              <input type="date" placeholder="09/15/2021" />
               <button onClick={handleReturnBook}>Book</button>
             </div>
           )}
+
         </div>
       </form>
     </div>
