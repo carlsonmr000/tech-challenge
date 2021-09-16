@@ -6,9 +6,14 @@ function FlightBooker() {
 
 
 
-  const handleBook = (e) => {
+  const handleOneBook = (e) => {
     e.preventDefault();
-    alert(`You have set a date from  `);
+    alert(`You have booked a one-way flight on`);
+  };
+
+  const handleReturnBook = (e) => {
+    e.preventDefault();
+    alert(`You have booked a one-way and return flights on`);
   };
 
   return (
@@ -23,17 +28,17 @@ function FlightBooker() {
 
           {selectedOption === "one" && (
             <div>
-              <input type="text" placeholder="09/15/2021" />
-              <input type="text" disabled={ selectedOption === 'one' ? true : false } placeholder="09/15/2021"  />
-              <button onClick={handleBook}>Book</button>
+              <input type="date" placeholder="09/15/2021" />
+              <input type="date" disabled={ selectedOption === 'one' ? true : false } placeholder="09/15/2021"  />
+              <button onClick={handleOneBook}>Book</button>
             </div>
           )}
 
           {selectedOption === "return" && (
             <div>
-              <input type="text" placeholder="09/15/2021" />
-              <input type="text" placeholder="09/15/2021"  />
-              <button onClick={handleBook}>Book</button>
+              <input type="date" placeholder="09/15/2021" />
+              <input type="date" placeholder="09/15/2021"  />
+              <button onClick={handleReturnBook}>Book</button>
             </div>
           )}
         </div>
