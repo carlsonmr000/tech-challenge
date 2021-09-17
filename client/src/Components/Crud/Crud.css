@@ -39,11 +39,15 @@
 
 }
 
-select {
+.crud-button:hover {
+    background-color: #ff9100;
+}
+
+.select {
     display: flex;
     margin: 10px;
     padding: 50px;
-    width: 500px;
+    width: 510px;
     border: none;
     border-radius: 6px;
     margin-bottom: 20px;

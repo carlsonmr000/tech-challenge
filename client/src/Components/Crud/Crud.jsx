@@ -98,6 +98,7 @@ function Crud() {
 
           {peopleToDisplay.length > 0 ? (
             <select 
+            className="select"
             onChange={selectPerson}
             size="2">
               {peopleToDisplay.map(function (item, i) {
@@ -109,7 +110,7 @@ function Crud() {
               
             </select>
           ) : (
-            <select size={people.length}>
+            <select className="select" size={people.length}>
               <option></option>
             </select>
           )}
