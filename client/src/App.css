@@ -1,6 +1,6 @@
 body {
     margin: 30px 30px;
-    background-color: lightgrey;
+    background-color: rgb(236, 231, 231);
   }
   
   .App {
@@ -13,5 +13,6 @@ body {
   }
   
   h1 {
-      font-family: "Montserrat", sans-serif;
+      font-family: "Nunito", sans-serif;
+      font-weight: bold;
   }

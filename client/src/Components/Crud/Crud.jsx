@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./Crud.css";
+
 
 function Crud() {
   const [people, setPeople] = useState([]);
@@ -24,23 +26,22 @@ function Crud() {
   };
 
   const handleFilter = (e) => {
-    var peepsToKeep = [];
+    let peopleToKeep = [];
 
     for (let i = 0; i < people.length; i++) {
-      var fullName = people[i].name + people[i].surname;
+      let fullName = people[i].name + people[i].surname;
       if (fullName.indexOf(e.target.value) > -1) {
-        console.log("U HAVE TH LETTER WE R LOOKING FOR!!!", fullName);
-        peepsToKeep.push(people[i]);
+       peopleToKeep.push(people[i]);
       }
     }
     setFilteredInput(e.target.value);
-    setFilteredPeopled(peepsToKeep);
+    setFilteredPeopled(peopleToKeep);
   };
 
   const selectPerson = (e) => {
     e.preventDefault();
     
-    var personSelected = JSON.parse(e.target.value)
+    let personSelected = JSON.parse(e.target.value)
     setPersonSelected(personSelected)
 
   }
@@ -48,7 +49,7 @@ function Crud() {
   const handleUpdate = (e) => {
     e.preventDefault();
 
-    var tempPeople = people
+    let tempPeople = people
 
 
      for(let i = 0; i < tempPeople.length; i++) {
@@ -59,9 +60,6 @@ function Crud() {
       }
       
     }
-
-    console.log('TEMP PEOPLE new name in here ?', tempPeople)
-
     setPeople([...tempPeople])
   }
 
@@ -84,7 +82,7 @@ function Crud() {
   }
 
 
-  var peopleToDisplay = people;
+  let peopleToDisplay = people;
 
   if (filterInput.length > 0) {
     peopleToDisplay = filterPeopled;
@@ -93,8 +91,8 @@ function Crud() {
   return (
     <div className="App">
       <h1>CRUD</h1>
-      <form>
-        <div>
+      <form className="crud-wrapper">
+        <div className="crud-parent"> 
           <label>Filter prefix:</label>
           <input onInput={handleFilter} />
 
@@ -112,7 +110,7 @@ function Crud() {
             </select>
           ) : (
             <select size={people.length}>
-              <option>Sory no match</option>
+              <option></option>
             </select>
           )}
 
@@ -130,9 +128,12 @@ function Crud() {
               setSurname(e.target.value);
             }}
           />
-          <button onClick={handleCreate}>Create</button>
-          <button onClick={handleUpdate}>Update</button>
-          <button onClick={handleDelete}>Delete</button>
+          <div className="button-parent">
+
+          <button className="crud-button" onClick={handleCreate}>Create</button>
+          <button className="crud-button" onClick={handleUpdate}>Update</button>
+          <button className="crud-button" onClick={handleDelete}>Delete</button>
+          </div>
         </div>
       </form>
     </div>

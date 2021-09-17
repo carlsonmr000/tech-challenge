@@ -5,17 +5,23 @@
   .count {
     margin: 5px;
     width: 5vw;
-    font-family: "Montserrat", sans-serif;
-    color: white;
+    font-family: "Nunito", sans-serif;
+    color: #240046;
     font-weight: bolder;
+    font-size: 16px;
   }
   
   .count-button {
     padding: 5px 50px;
     border-radius: 6px;
     border: none;
-    font-family: "Montserrat", sans-serif;
-    background-color: #5893f1;
+    font-family: "Nunito", sans-serif;
+    background-color: #5a189a;
     color: white;
     font-weight: bold;
+    font-size: 16px;
+  }
+
+  .count-button:focus {
+    background-color: #ff9100;
   }

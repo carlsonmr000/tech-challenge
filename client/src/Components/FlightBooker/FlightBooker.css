@@ -1,0 +1,30 @@
+.button {
+    padding: 5px 50px;
+    border-radius: 6px;
+    border: none;
+    font-family: "Nunito", sans-serif;
+    background-color: rgba(90, 24, 154);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+}
+
+.button:hover {
+    background-color: #ff9100;
+}
+
+.button:disabled{
+    background:  #fff;
+    color: #ccc;
+    cursor: no-drop;
+ }
+
+ .option {
+    font-family: "Nunito", sans-serif;
+    color: #240046;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+
+ }

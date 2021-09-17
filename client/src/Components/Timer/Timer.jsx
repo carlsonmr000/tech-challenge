@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
+import "./Timer.css";
+
+
 function Timer() {
   const [seconds, setSeconds] = useState(0);
   const [max, setMax] = useState(10);
-  // const [value, setValue] = useState(0);
 
   useEffect(() => {
-    // console.log('I am second!', seconds)
-    // if (seconds < max) {
-    //   setTimeout(() => setSeconds(seconds + 1), 1000);
-    // }
-    var ticking = setInterval(()=> {
+    let ticking = setInterval(()=> {
       if (seconds < max) {
         setSeconds(Math.round((seconds + 0.1) * 100) / 100)
 
@@ -28,7 +26,6 @@ function Timer() {
   const handleReset = (e) => {
     e.preventDefault();
    
-    //clearInterval(ticking)
     setSeconds(0);
   };
 
@@ -46,7 +43,7 @@ function Timer() {
             type="range"
           />
           <br />
-          <div>{seconds}s</div>
+          <div className="seconds">{seconds}s</div>
           <br />
           <label>Duration:</label>
           <input
@@ -56,7 +53,7 @@ function Timer() {
           />
           <br />
 
-          <button onClick={handleReset} >Reset Timer</button>
+          <button className="timer-button" onClick={handleReset} >Reset Timer</button>
         </div>
       </form>
     </div>

@@ -25,7 +25,8 @@ function TemperatureConverter() {
     <div className="temp-wrapper">
       <h1>Temperature Converter</h1>
       <form>
-        <div>
+        <div className="temp-parent">
+          <label className="label">Celsius</label>
           <input
             className="number"
             type="number"
@@ -36,8 +37,7 @@ function TemperatureConverter() {
             }}
             onClick={handleClick}
           />
-          <label>Celsius=</label>
-
+        <p className="equal">to</p>
           <input
             className="number"
             type="number"
@@ -48,7 +48,7 @@ function TemperatureConverter() {
             }}
             onClick={handleClick}
           />
-          <label>Fahrenheit</label>
+            <label className="label">Fahrenheit</label>
         </div>
       </form>
     </div>

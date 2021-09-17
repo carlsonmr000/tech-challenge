@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./FlightBooker.css";
+
 
 export default function FlightBooker() {
   const [selectedOption, setSelectedOption] = useState("one");
@@ -13,8 +15,8 @@ export default function FlightBooker() {
   const handleReturnBook = (e) => {
     e.preventDefault();
 
-    var d1 = Date.parse(dateOne);
-    var d2 = Date.parse(dateTwo);
+    let d1 = Date.parse(dateOne);
+    let d2 = Date.parse(dateTwo);
 
     if (d1 < d2) {
       alert(`You have booked a flight from ${dateOne} to ${dateTwo}`);
@@ -23,20 +25,17 @@ export default function FlightBooker() {
     }
   };
 
-  var d1 = Date.parse(dateOne);
-  var d2 = Date.parse(dateTwo);
-  var showButton = true;
-  console.log("d1, d2", d1, d2);
+  let d1 = Date.parse(dateOne);
+  let d2 = Date.parse(dateTwo);
+  let showButton = true;
 
   if (d1 < d2) {
-    //alert(`You have booked a flight from ${dateOne} to ${dateTwo}`);
   } else {
-    //alert(`Return flight on ${dateTwo} cannot be before ${dateOne}`);
     showButton = false;
   }
 
-  var dateOneClass = "";
-  var dateTwoClass = "";
+  let dateOneClass = "";
+  let dateTwoClass = "";
 
   if (dateOne.length > 0) {
     if (!d1) {
@@ -52,16 +51,15 @@ export default function FlightBooker() {
     }
   }
 
-  // console.log('show button', showButton)
-
+ 
   return (
     <div className="App">
       <h1>Flight Booker</h1>
       <form>
         <div>
-          <select onChange={(e) => setSelectedOption(e.target.value)}>
-            <option value="one">one-way flight</option>
-            <option value="return">return flight</option>
+          <select className="option"  onChange={(e) => setSelectedOption(e.target.value)}>
+            <option className="option" value="one">one-way flight</option>
+            <option className="option" value="return">return flight</option>
           </select>
 
           {selectedOption === "one" && (
@@ -71,14 +69,18 @@ export default function FlightBooker() {
                 placeholder="09/15/2021"
                 onInput={(e) => setDateOne(e.target.value)}
                 className={dateOneClass}
+                style={{border: 'none', borderRadius: '6px', padding: '5px', margin: '10px, auto', color: 'purple', fontFamily: 'Nunito', fontSize: '16px', color: 'rgba(90, 24, 154)'
+
+              }} 
               />
               <input
                 type="text"
                 disabled={selectedOption === "one" ? true : false}
-                placeholder="09/15/2021"
                 onInput={(e) => setDateTwo(e.target.value)}
+                style={{border: 'none', borderRadius: '6px', padding: '8px', color: 'white', backgroundColor: 'white', margin: '10px'}} 
+                placeholder="N/A"
               />
-              <button onClick={handleOneBook}>Book</button>
+              <button className="button" onClick={handleOneBook}>Book</button>
             </div>
           )}
 
@@ -89,17 +91,20 @@ export default function FlightBooker() {
                 placeholder="09/15/2021"
                 className={dateOneClass}
                 onInput={(e) => setDateOne(e.target.value)}
+                style={{border: 'none', margin: '10px', borderRadius: '6px', padding: '5px', fontSize: '16px', color: 'rgba(90, 24, 154)'}} 
+
               />
               <input
                 type="text"
                 placeholder="09/15/2021"
                 className={dateTwoClass}
                 onInput={(e) => setDateTwo(e.target.value)}
+                style={{border: 'none', borderRadius: '6px', padding: '5px', fontSize: '16px', color: 'rgba(90, 24, 154)'}} 
               />
               {showButton ? (
-                <button onClick={handleReturnBook}>Book</button>
+                <button className="button" onClick={handleReturnBook}>Book</button>
               ) : (
-                <button disabled onClick={handleReturnBook}>
+                <button className="button" disabled onClick={handleReturnBook}>
                   Book
                 </button>
               )}

@@ -8,3 +8,29 @@
     height: 30px;
     background-color: green;
   }
+
+  .timer-button {
+    padding: 5px 50px;
+    border-radius: 6px;
+    border: none;
+    font-family: "Nunito", sans-serif;
+    background-color: #5a189a;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  .timer-button:hover {
+    background-color: #ff9100;
+  }
+ 
+  .seconds {
+    margin-top: 10px;
+    margin: 10px;
+    margin-bottom: -10px;
+  }
+
+  label {
+    margin: 10px;
+  }

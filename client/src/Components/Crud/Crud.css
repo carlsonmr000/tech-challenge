@@ -1,0 +1,62 @@
+.crud-wrapper {
+    /* display: flex;
+    border: 2px solid black;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding: 20px; */
+    /* background-color: #FE6C03; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vh;
+    margin: 10px auto;
+    height: 60vh;
+   
+}
+
+.button-parent {
+    display: flex;
+    margin-top: 10px;
+}
+
+.crud-button {
+ 
+    background-color: #44A3E8;
+    width: 10vw;
+    height: 5vh;
+    font-size: 1rem;
+    border: none;
+    flex-wrap: wrap;
+    margin: 10px;
+    font-family: "Nunito", sans-serif;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    border: none;
+    background-color: #5a189a;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+
+select {
+    display: flex;
+    margin: 10px;
+    padding: 50px;
+    width: 300px;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    color: #5a189a;
+    font-size: 16px;
+
+}
+
+input {
+    border: none;
+    border-radius: 6px;
+    margin: 5px;
+    padding: 5px;
+    color: #5a189a;
+    font-size: 16px;
+}
