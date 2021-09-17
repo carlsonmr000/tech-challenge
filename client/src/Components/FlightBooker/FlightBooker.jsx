@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 
 export default function FlightBooker() {
-  // const { register } = useForm();
   const [selectedOption, setSelectedOption] = useState("one");
   const [dateOne, setDateOne] = useState("");
   const [dateTwo, setDateTwo] = useState("");
