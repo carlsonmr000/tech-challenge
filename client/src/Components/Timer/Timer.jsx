@@ -25,11 +25,8 @@ function Timer() {
 
   const handleReset = (e) => {
     e.preventDefault();
-   
-    setSeconds(0);
+   setSeconds(0);
   };
-
-  console.log('max!!!', max)
 
   return (
     <div className="App">

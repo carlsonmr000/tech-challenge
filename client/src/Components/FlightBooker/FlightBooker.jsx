@@ -39,14 +39,12 @@ export default function FlightBooker() {
 
   if (dateOne.length > 0) {
     if (!d1) {
-      console.log("D1 is nan! !d1", d1);
       dateOneClass = "notnumber";
     }
   }
 
   if (dateTwo.length > 0) {
     if (!d2) {
-      console.log("D1 is nan! !d1", d1);
       dateTwoClass = "notnumber";
     }
   }

@@ -10,11 +10,6 @@ function Crud() {
   const [surname, setSurname] = useState("");
   const [personSelected, setPersonSelected] = useState({})
 
-  console.log("this is the name", name);
-  console.log("this is the name", surname);
-  console.log("heres our people", people);
-  console.log('person to update!!', personSelected)
-
   const handleCreate = (e) => {
     e.preventDefault();
     let person = {};
@@ -54,7 +49,6 @@ function Crud() {
 
      for(let i = 0; i < tempPeople.length; i++) {
       if(tempPeople[i].name === personSelected.name && tempPeople[i].surname === personSelected.surname) {
-        console.log("we found a match", tempPeople[i])
         tempPeople[i].name = name
         tempPeople[i].surname = surname
       }
@@ -70,7 +64,7 @@ function Crud() {
     for(let i = 0; i < people.length; i++) {
 
       if(people[i].name === personSelected.name && people[i].surname === personSelected.surname) {
-        console.log("we found a match", people[i])
+        
       } else {
         peopleToKeep.push(people[i])
       }
@@ -102,7 +96,6 @@ function Crud() {
             onChange={selectPerson}
             size="2">
               {peopleToDisplay.map(function (item, i) {
-                console.log("test");
                 return (
                   <option value={JSON.stringify(item)} key={i}>{item.name + " " + item.surname}</option>
                 );
